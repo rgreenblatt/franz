@@ -18,15 +18,15 @@ export default class User {
   // better assume it's confirmed to avoid noise
   @observable subscription = {};
 
-  @observable isSubscriptionOwner = false;
+  @observable isSubscriptionOwner = true;
 
-  @observable isPremium = false;
+  @observable isPremium = true;
 
   @observable beta = false;
 
   @observable donor = {};
 
-  @observable isDonor = false;
+  @observable isDonor = true;
 
   @observable isMiner = false;
 
@@ -43,11 +43,11 @@ export default class User {
     this.lastname = data.lastname || this.lastname;
     this.organization = data.organization || this.organization;
     this.accountType = data.accountType || this.accountType;
-    this.isPremium = data.isPremium || this.isPremium;
+    this.isPremium = true;
     this.beta = data.beta || this.beta;
-    this.donor = data.donor || this.donor;
-    this.isDonor = data.isDonor || this.isDonor;
-    this.isSubscriptionOwner = data.isSubscriptionOwner || this.isSubscriptionOwner;
+    this.donor = true;
+    this.isDonor = true;
+    this.isSubscriptionOwner = true;
     this.isMiner = data.isMiner || this.isMiner;
     this.locale = data.locale || this.locale;
   }
